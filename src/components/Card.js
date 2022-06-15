@@ -3,7 +3,7 @@ import React from "react";
 import { FaTrash } from "react-icons/fa";
 import { HiPencilAlt } from "react-icons/hi";
 
-const Card = () => {
+const Card = ({ card }) => {
   return (
     <Box
       bgColor="#51557E"
@@ -22,19 +22,19 @@ const Card = () => {
         h={["fit-content", "fit-content", "fit-content", "53px"]}
       >
         <Text overflow="hidden" w="100px" h="25px">
-          title
+          {card.title}
         </Text>
-        <Text w="50px">$cash</Text>
-        <Text w="fit-content">date</Text>
-        <Text w="80px">category</Text>
+        <Text w="50px">${card.cash}</Text>
+        <Text w="fit-content">{card.date}</Text>
+        <Text w="80px">{card.category}</Text>
         <Flex align="center" gap={["0.4rem", "0.4rem", "0.4rem", "0.8rem"]}>
           <Box
             borderRadius="50%"
             w="10px"
             h="10px"
-            // bgColor=type === "incomes" ? "#00CC63" : "red"}
+            bgColor={card.type === "incomes" ? "#00CC63" : "red"}
           ></Box>
-          <Text>type</Text>
+          <Text>{card.type}</Text>
         </Flex>
         <Flex
           justifyContent={[
