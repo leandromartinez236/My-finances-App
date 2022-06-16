@@ -33,7 +33,7 @@ const Navbar = () => {
             gap="2rem"
           >
             <Box style={navbarLinks} _hover={navbarLinksHover}>
-              <Link to="/">New Ticket</Link>
+              <Link to="/form">New Ticket</Link>
             </Box>
             <Box style={navbarLinks} _hover={navbarLinksHover}>
               <Link to="/">Login</Link>
