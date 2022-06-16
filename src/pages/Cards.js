@@ -79,7 +79,7 @@ const Cards = () => {
     >
       <Box p="0 11px">
         <Box
-          w="89%"
+          w="87%"
           minW="80%"
           display={["none", "none", "none", "flex"]}
           borderRadius="10px"
