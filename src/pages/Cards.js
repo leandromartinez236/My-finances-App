@@ -11,16 +11,16 @@ const Cards = () => {
   const data = [
     {
       id: 1,
-      title: "Pan",
-      cash: 2,
+      title: "Work",
+      cash: 5,
       date: "1/02/22",
       type: "incomes",
       category: "Home",
     },
     {
       id: 2,
-      title: "AUTOMOVIL",
-      cash: 200,
+      title: "Car",
+      cash: 20000,
       date: "2/08/22",
       type: "egress",
       category: "Home",
@@ -35,15 +35,15 @@ const Cards = () => {
     },
     {
       id: 31,
-      title: "Carne",
-      cash: 20,
+      title: "Meat",
+      cash: 50,
       date: "23/02/22",
-      type: "incomes",
+      type: "egress",
       category: "education",
     },
     {
       id: 4,
-      title: "Repuesto de auto",
+      title: "Ice cream",
       cash: 20,
       date: "23/02/22",
       type: "egress",
@@ -51,7 +51,7 @@ const Cards = () => {
     },
     {
       id: 5,
-      title: "Microondas",
+      title: "refrigerator",
       cash: 20,
       date: "23/02/22",
       type: "egress",
@@ -59,16 +59,16 @@ const Cards = () => {
     },
     {
       id: 6,
-      title: "awdaw awdawdawd",
-      cash: 20,
+      title: "Work",
+      cash: 1536,
       date: "23/02/22",
       type: "incomes",
       category: "hobby",
     },
     {
       id: 7,
-      title: " awdaw awdawdawd",
-      cash: 20,
+      title: "Work",
+      cash: 25754,
       date: "23/02/22",
       type: "incomes",
       category: "hobby",
@@ -87,7 +87,7 @@ const Cards = () => {
       </Box>
       <Box p="0 11px">
         <Box
-          w="87%"
+          w="89%"
           minW="80%"
           display={["none", "none", "none", "flex"]}
           borderRadius="10px"
@@ -98,7 +98,7 @@ const Cards = () => {
           p="1rem 3rem 1rem 4rem"
         >
           <Text>Title</Text>
-          <Text>Cash</Text>
+          <Text ml="1rem">Cash</Text>
           <Text>Date</Text>
           <Text>Category</Text>
           <Text>Type</Text>

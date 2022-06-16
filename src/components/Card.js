@@ -24,7 +24,7 @@ const Card = ({ card }) => {
         <Text overflow="hidden" w="100px" h="25px">
           {card.title}
         </Text>
-        <Text w="50px">${card.cash}</Text>
+        <Text w="70px">${card.cash}</Text>
         <Text w="fit-content">{card.date}</Text>
         <Text w="80px">{card.category}</Text>
         <Flex align="center" gap={["0.4rem", "0.4rem", "0.4rem", "0.8rem"]}>
