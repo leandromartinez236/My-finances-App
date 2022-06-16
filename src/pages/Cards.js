@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import Card from "../components/Card";
+import SearchBar from "../components/SearchBar";
+import debounce from "debounce";
 
 const Cards = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const updateSearch = (e) => setSearchTerm(e?.target?.value);
+  const debouncedSearch = debounce(updateSearch, 1000);
   const data = [
     {
       id: 1,
@@ -77,6 +82,9 @@ const Cards = () => {
       minW="50%"
       flexDir="column"
     >
+      <Box>
+        <SearchBar search={debouncedSearch} />
+      </Box>
       <Box p="0 11px">
         <Box
           w="87%"
@@ -104,9 +112,22 @@ const Cards = () => {
         flexDirection="column"
         gap="1.6rem"
       >
-        {data.map((card) => (
-          <Card key={card.id} card={card} />
-        ))}
+        {data
+          .filter((card) => {
+            if (searchTerm === "") {
+              return card;
+            } else if (
+              card.category
+                .toLowerCase()
+                .includes(searchTerm.toString().toLowerCase())
+            ) {
+              return card;
+            }
+            return false;
+          })
+          .map((card) => (
+            <Card key={card.id} card={card} />
+          ))}
       </Flex>
     </Flex>
   );

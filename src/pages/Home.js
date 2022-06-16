@@ -7,7 +7,7 @@ const Home = () => {
     <Box>
       <Flex bgColor="#1B2430">
         <Flex
-          h="100%"
+          h="fit-content"
           gap="2rem"
           flexDirection={["column", "column", "unset", "unset"]}
           minW="90%"
