@@ -11,6 +11,7 @@ const AppRoute = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/form" element={<Form />} />
+        <Route path="/form/:id/edit" element={<Form />} />
       </Routes>
     </Router>
   );

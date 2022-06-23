@@ -2,10 +2,14 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import React from "react";
 import { FaTrash } from "react-icons/fa";
 import { HiPencilAlt } from "react-icons/hi";
+import { useNavigate } from "react-router-dom";
 
-const Card = ({ card }) => {
+const Card = ({ card, handleDelete }) => {
+  const navigate = useNavigate();
+  console.log({ card: card.id });
   return (
     <Box
+      key={card.id}
       bgColor="#51557E"
       boxShadow="3px 2px 7px 1px #050404"
       color="#fff"
@@ -47,10 +51,15 @@ const Card = ({ card }) => {
           gap={["0", "0", "0", "1.2rem"]}
           w={["100%", "100%", "100%", "fit-content"]}
         >
-          <Box _hover={{ color: "#00CC63" }}>
+          <Box
+            onClick={() => {
+              navigate(`/form/${card.id}/edit`);
+            }}
+            _hover={{ color: "#00CC63" }}
+          >
             <HiPencilAlt fontSize="1.2rem" />
           </Box>
-          <Box _hover={{ color: "red" }}>
+          <Box onClick={() => handleDelete(card.id)} _hover={{ color: "red" }}>
             <FaTrash />
           </Box>
         </Flex>

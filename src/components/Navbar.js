@@ -35,12 +35,6 @@ const Navbar = () => {
             <Box style={navbarLinks} _hover={navbarLinksHover}>
               <Link to="/form">New Ticket</Link>
             </Box>
-            <Box style={navbarLinks} _hover={navbarLinksHover}>
-              <Link to="/">Login</Link>
-            </Box>
-            <Box style={navbarLinks} _hover={navbarLinksHover}>
-              <Link to="/">Register</Link>
-            </Box>
           </Flex>
           <Box display={["unset", "unset", "none", "none"]}>
             <GiHamburgerMenu onClick={() => setMenuOpen(!menuOpen)} />

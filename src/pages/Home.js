@@ -1,8 +1,29 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
+import axios from "axios";
 import React from "react";
+import { useEffect, useState } from "react";
 import Cards from "./Cards";
+import { Spinner } from "@chakra-ui/react";
 
 const Home = () => {
+  const [tickets, setTickets] = useState([]);
+  const [IsLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    const getTickets = async () => {
+      try {
+        const { data } = await axios.get(
+          `https://challenge-alkemy-backend.vercel.app/tickets`
+        );
+        setTickets(data?.tickets);
+        setIsLoading(true);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getTickets();
+  }, []);
+
   return (
     <Box>
       <Flex bgColor="#1B2430">
@@ -28,7 +49,11 @@ const Home = () => {
             <Text mb="1rem">Actual Balance</Text>
             <Text fontSize="1.3rem">$100.000</Text>
           </Box>
-          <Cards />
+          {!IsLoading ? (
+            <Spinner />
+          ) : (
+            <Cards setTickets={setTickets} data={tickets} />
+          )}
         </Flex>
       </Flex>
     </Box>

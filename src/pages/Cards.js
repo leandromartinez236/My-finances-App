@@ -3,77 +3,24 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import Card from "../components/Card";
 import SearchBar from "../components/SearchBar";
 import debounce from "debounce";
+import axios from "axios";
 
-const Cards = () => {
+const Cards = ({ data, setTickets }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const updateSearch = (e) => setSearchTerm(e?.target?.value);
   const debouncedSearch = debounce(updateSearch, 1000);
-  const data = [
-    {
-      id: 1,
-      title: "Work",
-      cash: 5,
-      date: "1/02/22",
-      type: "incomes",
-      category: "Home",
-    },
-    {
-      id: 2,
-      title: "Car",
-      cash: 20000,
-      date: "2/08/22",
-      type: "egress",
-      category: "Home",
-    },
-    {
-      id: 3,
-      title: "Led Tv",
-      cash: 20,
-      date: "3/02/22",
-      type: "egress",
-      category: "health",
-    },
-    {
-      id: 31,
-      title: "Meat",
-      cash: 50,
-      date: "23/02/22",
-      type: "egress",
-      category: "education",
-    },
-    {
-      id: 4,
-      title: "Ice cream",
-      cash: 20,
-      date: "23/02/22",
-      type: "egress",
-      category: "sin calificar",
-    },
-    {
-      id: 5,
-      title: "refrigerator",
-      cash: 20,
-      date: "23/02/22",
-      type: "egress",
-      category: "FOOD",
-    },
-    {
-      id: 6,
-      title: "Work",
-      cash: 1536,
-      date: "23/02/22",
-      type: "incomes",
-      category: "hobby",
-    },
-    {
-      id: 7,
-      title: "Work",
-      cash: 25754,
-      date: "23/02/22",
-      type: "incomes",
-      category: "hobby",
-    },
-  ];
+
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(
+        `https://challenge-alkemy-backend.vercel.app/tickets/${id}`
+      );
+      setTickets(data.filter((task) => task.id !== id));
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <Flex
       fontFamily="cursive"
@@ -113,7 +60,7 @@ const Cards = () => {
         gap="1.6rem"
       >
         {data
-          .filter((card) => {
+          ?.filter((card) => {
             if (searchTerm === "") {
               return card;
             } else if (
@@ -126,7 +73,7 @@ const Cards = () => {
             return false;
           })
           .map((card) => (
-            <Card key={card.id} card={card} />
+            <Card key={card.id} handleDelete={handleDelete} card={card} />
           ))}
       </Flex>
     </Flex>
