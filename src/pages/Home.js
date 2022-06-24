@@ -8,6 +8,18 @@ import { Spinner } from "@chakra-ui/react";
 const Home = () => {
   const [tickets, setTickets] = useState([]);
   const [IsLoading, setIsLoading] = useState(false);
+  let incomes = [];
+  let egress = [];
+  tickets.filter((ticket) => {
+    if (ticket.type === "egress") {
+      return (egress = [...egress, ticket.cash]);
+    }
+    if (ticket.type === "incomes") {
+      return (incomes = [...incomes, ticket.cash]);
+    }
+  });
+  let resultIncomes = incomes.reduce((a, b) => a + b, 0);
+  let resultEgress = egress.reduce((a, b) => a + b, 0);
 
   useEffect(() => {
     const getTickets = async () => {
@@ -47,7 +59,7 @@ const Home = () => {
             color="#fff"
           >
             <Text mb="1rem">Actual Balance</Text>
-            <Text fontSize="1.3rem">$100.000</Text>
+            <Text fontSize="1.3rem">${resultIncomes - resultEgress}</Text>
           </Box>
           {!IsLoading ? (
             <Spinner />
