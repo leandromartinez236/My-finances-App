@@ -25,6 +25,9 @@ const HamburgerMenu = ({ setMenuOpen, menuOpen }) => {
             <Link to="/">Home</Link>
           </Box>
           <Box onClick={() => setMenuOpen()}>
+            <Link to="/statistic">statistic</Link>
+          </Box>
+          <Box onClick={() => setMenuOpen()}>
             <Link to="/form">New Ticket</Link>
           </Box>
         </Flex>
