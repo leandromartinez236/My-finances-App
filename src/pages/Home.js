@@ -25,7 +25,7 @@ const Home = () => {
   }, []);
 
   return (
-    <Box>
+    <Box h="100vh">
       <Flex bgColor="#1B2430">
         <Flex
           h="fit-content"

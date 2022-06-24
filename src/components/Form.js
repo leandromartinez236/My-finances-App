@@ -21,7 +21,6 @@ const Form = () => {
   const [submitItem, setSubmitItem] = useState({
     title: "",
     cash: 1,
-    // date: "",
     type: "",
     category: "not-qualified",
   });
@@ -70,6 +69,7 @@ const Form = () => {
     flexDirection: "column",
     gap: "1rem",
     width: "300px",
+    height: "fit-content",
     minWidht: "160px",
     padding: "2rem 2rem",
     backgroundColor: "#191915",
@@ -87,7 +87,7 @@ const Form = () => {
   ];
 
   return (
-    <Flex>
+    <Flex h="100vh">
       <form onSubmit={submit} style={formStyles}>
         <Box>
           <div className="form-div">
