@@ -33,6 +33,9 @@ const Navbar = () => {
             gap="2rem"
           >
             <Box style={navbarLinks} _hover={navbarLinksHover}>
+              <Link to="/statistic">Statistic</Link>
+            </Box>
+            <Box style={navbarLinks} _hover={navbarLinksHover}>
               <Link to="/form">New Ticket</Link>
             </Box>
           </Flex>

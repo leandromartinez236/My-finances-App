@@ -21,7 +21,8 @@
   box-sizing: border-box;
 }
 #root {
-  height: 100vh;
+  /* height: 100vh; */
+  /* height: 100%; */
   background-color: #1b2430;
 }
 body {

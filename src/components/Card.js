@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 
 const Card = ({ card, handleDelete }) => {
   const navigate = useNavigate();
-  console.log({ card: card.id });
   return (
     <Box
       key={card.id}
