@@ -23,7 +23,6 @@ const Cards = ({ data, setTickets }) => {
 
   return (
     <Flex
-      fontFamily="cursive"
       gap={["1rem", "1rem", "1rem", "1.3rem"]}
       w="100%"
       minW="50%"

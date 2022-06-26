@@ -11,7 +11,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <Box bgColor="#816797" fontFamily="cursive">
+    <Box bgColor="#816797">
       <Container maxW="95%" m="0 auto" p="0" color="#fff">
         <Flex justifyContent="space-between" align="center" p="1rem">
           <Link to="/">

@@ -21,6 +21,7 @@ const Home = () => {
   let resultIncomes = incomes.reduce((a, b) => a + b, 0);
   let resultEgress = egress.reduce((a, b) => a + b, 0);
   let result = resultIncomes - resultEgress;
+
   useEffect(() => {
     const getTickets = async () => {
       try {
@@ -63,7 +64,7 @@ const Home = () => {
                 color="#fff"
               >
                 <Text mb="1rem">Actual Balance</Text>
-                <Text fontSize="1.3rem">{result?.toLocaleString()}</Text>
+                <Text fontSize="1.3rem">${result?.toLocaleString()}</Text>
               </Box>
               <Cards setTickets={setTickets} data={tickets} />
             </>

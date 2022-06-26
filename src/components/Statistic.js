@@ -43,7 +43,7 @@ const Statistic = () => {
     maintainAspectRatio: false,
     scales: {},
     layout: {
-      padding: 30,
+      padding: 20,
     },
     legend: {
       labels: {
@@ -53,7 +53,7 @@ const Statistic = () => {
   };
   return (
     <Box h="100vh">
-      <Doughnut data={datos} options={options} width={600} />
+      <Doughnut data={datos} options={options} width={400} />
     </Box>
   );
 };
