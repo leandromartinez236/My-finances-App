@@ -5,7 +5,6 @@ const SearchBar = ({ search }) => {
   return (
     <>
       <FormControl
-        fontFamily="cursive"
         ml="1rem"
         color="#fff"
         outline="none"

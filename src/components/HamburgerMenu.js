@@ -6,7 +6,6 @@ const HamburgerMenu = ({ setMenuOpen, menuOpen }) => {
   return (
     <>
       <Box
-        fontFamily="cursive"
         display={menuOpen ? "flex" : "none"}
         h="100%"
         w={["60%", "50%", "40%"]}
@@ -25,7 +24,7 @@ const HamburgerMenu = ({ setMenuOpen, menuOpen }) => {
             <Link to="/">Home</Link>
           </Box>
           <Box onClick={() => setMenuOpen()}>
-            <Link to="/statistic">statistic</Link>
+            <Link to="/statistic">Statistic</Link>
           </Box>
           <Box onClick={() => setMenuOpen()}>
             <Link to="/form">New Ticket</Link>
